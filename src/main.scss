@@ -1,0 +1,77 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: rgb(255, 59, 48);
+  --color-background: rgb(255, 255, 255);
+  --color-weekDay: rgb(0, 0, 0);
+  --color-weekendDay: rgb(142, 142, 147);
+  --color-currentDay: rgb(255, 255, 255);
+}
+
+body {
+  font-family: "SF Pro Text", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.039vw; // ~10px = (10/329)*100
+  line-height: 1;
+  background: var(--color-background);
+  color: var(--color-weekDay);
+
+  margin: auto 3.647vw;
+  margin-top: 6.079vw; // ~20px = (20/329)*100
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4.863vw; // ~16px = (16/329)*100
+
+  &__monthContainer {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: 3.343vw; // ~11px = (11/329)*100
+  }
+  &__monthLabel {
+    color: var(--color-primary);
+    font-size: 3.343vw; // ~11px = (11/329)*100
+    text-transform: uppercase;
+    font-weight: 600;
+
+    margin-left: 0.912vw; // ~3px = (3/329)*100
+  }
+
+  &__daysContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 5.471vw); // ~18px = (18/329)*100
+    grid-auto-rows: 5.471vw; // ~18px = (18/329)*100
+    column-gap: 0.912vw; // ~3px = (3/329)*100
+  }
+  &__day {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 100vh;
+
+    &--weekend {
+      color: var(--color-weekendDay);
+    }
+    &--active {
+      background: var(--color-primary);
+      color: var(--color-currentDay);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: rgb(255, 69, 58);
+    --color-background: rgb(28, 28, 29);
+    --color-weekDay: rgb(255, 255, 255);
+  }
+}

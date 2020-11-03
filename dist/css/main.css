@@ -1,0 +1,91 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: rgb(255, 59, 48);
+  --color-background: rgb(255, 255, 255);
+  --color-weekDay: rgb(0, 0, 0);
+  --color-weekendDay: rgb(142, 142, 147);
+  --color-currentDay: rgb(255, 255, 255);
+}
+
+body {
+  font-family: "SF Pro Text", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.039vw;
+  line-height: 1;
+  background: var(--color-background);
+  color: var(--color-weekDay);
+  margin: auto 3.647vw;
+  margin-top: 6.079vw;
+}
+
+.calendar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 4.863vw;
+}
+
+.calendar__monthContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
+  gap: 3.343vw;
+}
+
+.calendar__monthLabel {
+  color: var(--color-primary);
+  font-size: 3.343vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 0.912vw;
+}
+
+.calendar__daysContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (5.471vw)[7];
+      grid-template-columns: repeat(7, 5.471vw);
+  grid-auto-rows: 5.471vw;
+  -webkit-column-gap: 0.912vw;
+          column-gap: 0.912vw;
+}
+
+.calendar__day {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100vh;
+}
+
+.calendar__day--weekend {
+  color: var(--color-weekendDay);
+}
+
+.calendar__day--active {
+  background: var(--color-primary);
+  color: var(--color-currentDay);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: rgb(255, 69, 58);
+    --color-background: rgb(28, 28, 29);
+    --color-weekDay: rgb(255, 255, 255);
+  }
+}
+/*# sourceMappingURL=main.css.map */

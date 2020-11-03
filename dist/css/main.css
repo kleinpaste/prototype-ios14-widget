@@ -15,6 +15,10 @@
   --color-currentDay: rgb(255, 255, 255);
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   font-family: "SF Pro Text", sans-serif;
   font-style: normal;
@@ -32,6 +36,7 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   padding: 3.647vw;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);

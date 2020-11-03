@@ -1,6 +1,6 @@
 *,
-::after,
-::before {
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -24,13 +24,15 @@ body {
   letter-spacing: 0.012em;
   color: var(--color-weekDay);
   background: var(--color-background);
-  margin: auto 3.647vw;
-  margin-top: 6.079vw;
 }
 
 .calendar {
   display: -ms-grid;
   display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 100vh;
+  padding: 3.647vw;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   gap: 4.863vw;

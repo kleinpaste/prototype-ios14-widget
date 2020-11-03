@@ -59,3 +59,27 @@ months.forEach((month) => {
 
   month.appendChild(fragment);
 });
+
+// Set the calendar containers min-height if the calendar is being rendered at one of the five widget viewport widths. This is to fix (hack) vertical alignment because the widget is getting rendered in a viewport with a larger height then the widgets height.
+
+const mediumWidgetSizes = [
+  { width: 360, height: 169 },
+  { width: 329, height: 155 },
+  { width: 348, height: 159 },
+  { width: 322, height: 148 },
+  { width: 291, height: 141 },
+];
+const viewportWidth = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+);
+const isViewportWidgetWidth = () =>
+  mediumWidgetSizes.some((element) => element.width === viewportWidth);
+
+if (isViewportWidgetWidth()) {
+  const widgetSize = mediumWidgetSizes.find(
+    (element) => element.width === viewportWidth
+  );
+  const calendarContainer = document.querySelector(".calendar");
+  calendarContainer.setAttribute("style", `min-height: ${widgetSize.height}px`);
+}

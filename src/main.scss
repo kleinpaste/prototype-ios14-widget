@@ -1,6 +1,6 @@
 *,
-::after,
-::before {
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,13 +23,13 @@ body {
   letter-spacing: 0.012em;
   color: var(--color-weekDay);
   background: var(--color-background);
-
-  margin: auto 3.647vw;
-  margin-top: 6.079vw; // ~20px = (20/329)*100
 }
 
 .calendar {
   display: grid;
+  align-content: center;
+  min-height: 100vh;
+  padding: 3.647vw;
   grid-template-columns: repeat(2, 1fr);
   gap: 4.863vw; // ~16px = (16/329)*100
 

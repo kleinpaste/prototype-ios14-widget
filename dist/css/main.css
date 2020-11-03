@@ -18,11 +18,12 @@
 body {
   font-family: "SF Pro Text", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 3.039vw;
   line-height: 1;
-  background: var(--color-background);
+  letter-spacing: 0.012em;
   color: var(--color-weekDay);
+  background: var(--color-background);
   margin: auto 3.647vw;
   margin-top: 6.079vw;
 }
@@ -45,10 +46,11 @@ body {
 }
 
 .calendar__monthLabel {
-  color: var(--color-primary);
-  font-size: 3.343vw;
-  text-transform: uppercase;
   font-weight: 600;
+  font-size: 3.343vw;
+  letter-spacing: 0.006em;
+  text-transform: uppercase;
+  color: var(--color-primary);
   margin-left: 0.912vw;
 }
 

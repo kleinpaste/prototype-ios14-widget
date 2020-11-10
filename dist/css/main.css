@@ -15,10 +15,6 @@
   --color-currentDay: rgb(255, 255, 255);
 }
 
-html {
-  height: -webkit-fill-available;
-}
-
 body {
   font-family: "SF Pro Text", sans-serif;
   font-style: normal;
@@ -36,8 +32,7 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
-  padding: 3.647vw;
+  padding: 1.519vw 3.647vw;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   gap: 4.863vw;
@@ -58,6 +53,7 @@ body {
   letter-spacing: 0.006em;
   text-transform: uppercase;
   color: var(--color-primary);
+  margin-top: 2.128vw;
   margin-left: 0.912vw;
 }
 

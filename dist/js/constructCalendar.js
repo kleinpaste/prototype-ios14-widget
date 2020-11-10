@@ -17,8 +17,6 @@ const englishMonthNames = [
 
 const currentDay = new Date();
 const day = new Date();
-// currentDay.setDate(73); // For testing
-// day.setDate(73); // For testing
 day.setDate(1);
 const isDayFirstOfMonth = () => day.getDate() === 1;
 const isDayWeekend = () => day.getDay() === 0 || day.getDay() === 6;
@@ -62,6 +60,7 @@ months.forEach((month) => {
 
 // Set the calendar containers min-height if the calendar is being rendered at one of the five widget viewport widths. This is to fix (hack) vertical alignment because the widget is getting rendered in a viewport with a larger height then the widgets height.
 
+const calendarContainer = document.querySelector(".calendar");
 const mediumWidgetSizes = [
   { width: 360, height: 169 },
   { width: 329, height: 155 },
@@ -80,6 +79,13 @@ if (isViewportWidgetWidth()) {
   const widgetSize = mediumWidgetSizes.find(
     (element) => element.width === viewportWidth
   );
-  const calendarContainer = document.querySelector(".calendar");
   calendarContainer.setAttribute("style", `min-height: ${widgetSize.height}px`);
+} else {
+  window.onresize = function () {
+    calendarContainer.setAttribute(
+      "style",
+      `min-height: ${window.innerHeight}px`
+    );
+  };
+  window.onresize();
 }
